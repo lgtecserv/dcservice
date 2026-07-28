@@ -5,14 +5,14 @@ import logo from "../assets/dc-service-logo.png.asset.json";
 import { services } from "../content/services";
 import { company } from "../content/company";
 
-const navItems = [
+const navItems: { to: string; label: string; hasMenu?: boolean }[] = [
   { to: "/", label: "Início" },
   { to: "/quem-somos", label: "Quem Somos" },
   { to: "/servicos", label: "Serviços", hasMenu: true },
   { to: "/parceiros", label: "Parceiros" },
   { to: "/blog", label: "Blog" },
   { to: "/contactos", label: "Contactos" },
-] as const;
+];
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
