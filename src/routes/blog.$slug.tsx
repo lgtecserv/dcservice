@@ -41,7 +41,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post: p } = Route.useLoaderData();
+  const { post: p } = Route.useLoaderData() as { post: import("../content/posts").Post };
   return (
     <>
       <section className="border-b border-border bg-surface">

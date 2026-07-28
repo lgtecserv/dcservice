@@ -43,7 +43,7 @@ export const Route = createFileRoute("/servicos/$slug")({
 });
 
 function ServiceDetail() {
-  const { service: s } = Route.useLoaderData();
+  const { service: s } = Route.useLoaderData() as { service: import("../content/services").Service };
   const Icon = s.icon;
   const related = services.filter((x) => x.slug !== s.slug).slice(0, 3);
 
