@@ -124,12 +124,16 @@
   }
 }
 
-@utility container-page {
-  max-width: 80rem;
-  margin-inline: auto;
-  padding-inline: 1.25rem;
+@layer components {
+  .container-page {
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
   @media (min-width: 768px) {
-    padding-inline: 2rem;
+    .container-page {
+      padding-inline: 2rem;
+    }
   }
 }
 
