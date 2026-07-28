@@ -17,6 +17,7 @@ export type Service = {
   title: string;
   short: string;
   icon: LucideIcon;
+  image: string;
   intro: string;
   description: string;
   problems: string[];
@@ -34,6 +35,7 @@ export const services: Service[] = [
     short:
       "Aprovisionamento contínuo de material de escritório e consumíveis para organizações de qualquer dimensão.",
     icon: Briefcase,
+    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Simplificamos o abastecimento diário das suas equipas com um catálogo curado, prazos previsíveis e faturação centralizada.",
     description:
@@ -77,6 +79,7 @@ export const services: Service[] = [
     title: "Informática",
     short: "Equipamento, software e suporte técnico para o dia a dia das suas operações.",
     icon: Cpu,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Do posto de trabalho ao data center: fornecemos, instalamos e mantemos a infraestrutura tecnológica que sustenta o seu negócio.",
     description:
@@ -115,6 +118,7 @@ export const services: Service[] = [
     title: "Segurança Cibernética",
     short: "Proteção contínua de dados, sistemas e operações contra ameaças modernas.",
     icon: ShieldCheck,
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Protegemos o património digital da sua organização com serviços de segurança que combinam tecnologia, processo e formação.",
     description:
@@ -153,6 +157,7 @@ export const services: Service[] = [
     title: "Consultoria Empresarial",
     short: "Aconselhamento estratégico e operacional para decisões críticas.",
     icon: ClipboardList,
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Ajudamos direções executivas a estruturar decisões complexas, com análise rigorosa e recomendações acionáveis.",
     description:
@@ -191,6 +196,7 @@ export const services: Service[] = [
     title: "Contabilidade",
     short: "Contabilidade organizada, fiscalidade e reporte financeiro sob controlo.",
     icon: Calculator,
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Asseguramos o cumprimento contabilístico e fiscal da sua empresa com rigor, prazo e transparência.",
     description:
@@ -225,6 +231,7 @@ export const services: Service[] = [
     title: "Recursos Humanos",
     short: "Recrutamento, gestão e desenvolvimento de talento para o seu negócio.",
     icon: Users,
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Ajudamos a atrair, integrar e desenvolver as pessoas certas para as suas ambições estratégicas.",
     description:
@@ -259,6 +266,7 @@ export const services: Service[] = [
     title: "Logística",
     short: "Transporte, armazenagem e distribuição com controlo end-to-end.",
     icon: Truck,
+    image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c83a9f?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Operações logísticas fiáveis, com visibilidade em tempo real e SLAs contratados.",
     description:
@@ -293,6 +301,7 @@ export const services: Service[] = [
     title: "Procurement",
     short: "Compras corporativas estratégicas com poupança comprovada.",
     icon: PackageSearch,
+    image: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Executamos aquisições complexas com metodologia formal, garantindo transparência, competitividade e conformidade.",
     description:
@@ -327,6 +336,7 @@ export const services: Service[] = [
     title: "Intermediação de Parcerias",
     short: "Ligamos empresas certas para criar valor de negócio real.",
     icon: Handshake,
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Facilitamos parcerias estratégicas entre organizações locais e internacionais, com base em due diligence e alinhamento de interesses.",
     description:
@@ -361,6 +371,7 @@ export const services: Service[] = [
     title: "Importação e Exportação",
     short: "Comércio internacional gerido do primeiro contacto ao desalfandegamento.",
     icon: Ship,
+    image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=1200",
     intro:
       "Simplificamos operações de importação e exportação, com gestão documental, logística e aduaneira integrada.",
     description:

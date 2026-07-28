@@ -15,6 +15,8 @@ import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
 import logo from "../assets/dc-service-logo.png.asset.json";
+import { AnimatePresence } from "framer-motion";
+import { PageTransition } from "../components/animations/PageTransition";
 
 function NotFoundComponent() {
   return (
@@ -115,7 +117,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="bg-[#0A0A0F]">
         {children}
         <Scripts />
       </body>
@@ -127,10 +129,14 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-dvh flex-col">
+      <div className="flex min-h-dvh flex-col bg-[#0A0A0F]">
         <SiteHeader />
         <main className="flex-1">
-          <Outlet />
+          <AnimatePresence mode="wait">
+            <PageTransition>
+              <Outlet />
+            </PageTransition>
+          </AnimatePresence>
         </main>
         <SiteFooter />
         <WhatsAppFloat />

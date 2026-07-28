@@ -28,12 +28,12 @@ export function StatCounter({ value, suffix = "", label }: { value: number; suff
   }, [value]);
 
   return (
-    <div ref={ref} className="text-center">
-      <div className="font-display text-5xl text-navy sm:text-6xl">
+    <div ref={ref} className="text-left">
+      <div className="font-display text-5xl sm:text-6xl text-[#0A1F44]">
         {n}
         <span className="text-cyan-brand">{suffix}</span>
       </div>
-      <div className="mt-2 text-sm text-muted-foreground">{label}</div>
+      <div className="mt-3 text-sm font-bold tracking-widest text-[#64748B] uppercase">{label}</div>
     </div>
   );
 }

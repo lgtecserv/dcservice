@@ -75,4 +75,23 @@ export const testimonials = [
     author: "Diretor de Operações",
     role: "Construção civil",
   },
+];
+
+export const faqs = [
+  {
+    question: "Como funciona o processo de consultoria inicial?",
+    answer: "O nosso processo inicia-se com uma sessão de diagnóstico gratuita, onde mapeamos os seus objetivos, restrições e critérios de sucesso. De seguida, apresentamos uma proposta de valor estruturada com cronograma e entregáveis claros, garantindo alinhamento total antes de avançarmos."
+  },
+  {
+    question: "A DC Service atende empresas fora de Maputo?",
+    answer: "Sim. Embora a nossa sede esteja em Maputo, temos capacidade de execução e acompanhamento de projetos em todo o território nacional, bem como operações transfronteiriças na região da SADC."
+  },
+  {
+    question: "Podem integrar múltiplos serviços num único contrato?",
+    answer: "Absolutamente. Esta é a nossa maior vantagem competitiva. Conseguimos agrupar, por exemplo, a infraestrutura de TI, procurement e contabilidade num único Service Level Agreement (SLA), simplificando a sua gestão de fornecedores."
+  },
+  {
+    question: "Como garantem a confidencialidade dos nossos dados?",
+    answer: "A confidencialidade é o pilar da nossa operação. Assinamos Acordos de Não Divulgação (NDAs) por defeito no início de qualquer engajamento e aplicamos políticas rigorosas de segurança da informação no tratamento dos seus dados."
+  }
 ] as const;

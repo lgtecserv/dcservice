@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo from "../assets/dc-service-logo.png.asset.json";
+import logo from "../assets/logo.png";
 import { services } from "../content/services";
 import { company } from "../content/company";
 
@@ -9,8 +9,6 @@ const navItems: { to: string; label: string; hasMenu?: boolean }[] = [
   { to: "/", label: "Início" },
   { to: "/quem-somos", label: "Quem Somos" },
   { to: "/servicos", label: "Serviços", hasMenu: true },
-  { to: "/parceiros", label: "Parceiros" },
-  { to: "/blog", label: "Blog" },
   { to: "/contactos", label: "Contactos" },
 ];
 
@@ -28,19 +26,15 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? "bg-background/85 backdrop-blur-lg border-b border-border shadow-[0_1px_0_0_rgba(10,31,68,0.04)]"
-          : "bg-background/60 backdrop-blur"
+          ? "bg-white/95 backdrop-blur-2xl border-b border-[#E2E8F0] shadow-sm"
+          : "bg-white/90 backdrop-blur-xl border-b border-[#E2E8F0]/50"
       }`}
     >
       <div className="container-page flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3" aria-label={company.name}>
-          <img src={logo.url} alt="" width={40} height={40} className="h-10 w-10 object-contain" />
-          <div className="flex flex-col leading-none">
-            <span className="text-[15px] font-semibold tracking-tight text-navy">DC SERVICE</span>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">LDA</span>
-          </div>
+        <Link to="/" className="flex items-center" aria-label={company.name}>
+          <img src={logo} alt="DC SERVICE, LDA" className="h-16 w-auto object-contain" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -54,27 +48,27 @@ export function SiteHeader() {
               >
                 <Link
                   to={item.to}
-                  className="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
-                  activeProps={{ className: "text-navy" }}
+                  className="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-[#0A1F44]/80 transition-colors hover:text-cyan-brand"
+                  activeProps={{ className: "text-cyan-brand" }}
                 >
                   {item.label}
                   <ChevronDown className="h-3.5 w-3.5" />
                 </Link>
                 {servicesOpen && (
                   <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
-                    <div className="w-[560px] rounded-xl border border-border bg-popover p-4 shadow-2xl">
+                    <div className="w-[560px] rounded-2xl bg-white/95 backdrop-blur-2xl p-4 shadow-xl border border-[#E2E8F0]">
                       <div className="grid grid-cols-2 gap-1">
                         {services.map((s) => (
                           <Link
                             key={s.slug}
                             to="/servicos/$slug"
                             params={{ slug: s.slug }}
-                            className="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-secondary"
+                            className="flex items-start gap-3 rounded-xl p-3 transition-all hover:bg-slate-50"
                           >
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-navy/5 text-navy">
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cyan-brand/10 text-cyan-brand">
                               <s.icon className="h-4 w-4" />
                             </span>
-                            <span className="text-sm font-medium text-foreground">{s.title}</span>
+                            <span className="text-sm font-medium text-[#0A1F44]">{s.title}</span>
                           </Link>
                         ))}
                       </div>
@@ -86,8 +80,8 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
-                activeProps={{ className: "text-navy" }}
+                className="px-4 py-2 text-sm font-medium text-[#0A1F44]/80 transition-colors hover:text-cyan-brand"
+                activeProps={{ className: "text-cyan-brand" }}
               >
                 {item.label}
               </Link>
@@ -98,13 +92,13 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Link
             to="/orcamento"
-            className="hidden sm:inline-flex items-center rounded-md bg-navy px-4 py-2.5 text-sm font-medium text-navy-foreground shadow-sm transition-all hover:bg-navy/90 hover:shadow-md"
+            className="hidden sm:inline-flex items-center rounded-full bg-[#0A1F44] px-6 py-2.5 text-sm font-medium text-white transition-all hover:bg-cyan-brand hover:text-[#0A1F44] hover:shadow-[0_0_25px_rgba(34,182,234,0.3)]"
           >
             Solicitar Orçamento
           </Link>
           <button
             type="button"
-            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground hover:bg-secondary"
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg text-[#0A1F44] hover:bg-slate-100"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             onClick={() => setOpen((v) => !v)}
           >
@@ -114,14 +108,14 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-[#E2E8F0] bg-white/95 backdrop-blur-2xl">
           <nav className="container-page py-4 flex flex-col gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-sm font-medium text-foreground hover:bg-secondary"
+                className="rounded-xl px-4 py-3 text-sm font-medium text-[#0A1F44]/80 hover:bg-slate-50 hover:text-cyan-brand transition-colors"
               >
                 {item.label}
               </Link>
@@ -129,7 +123,7 @@ export function SiteHeader() {
             <Link
               to="/orcamento"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-md bg-navy px-3 py-3 text-center text-sm font-medium text-navy-foreground"
+              className="mt-2 rounded-full bg-[#0A1F44] px-4 py-3 text-center text-sm font-medium text-white hover:bg-cyan-brand hover:text-[#0A1F44] transition-all"
             >
               Solicitar Orçamento
             </Link>
