@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
 
-export function Breadcrumbs({ items }: { items: { label: string; to?: string; params?: Record<string, string> }[] }) {
+export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
   return (
     <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground">
       <ol className="flex flex-wrap items-center gap-1.5">
@@ -13,11 +13,8 @@ export function Breadcrumbs({ items }: { items: { label: string; to?: string; pa
         {items.map((item, i) => (
           <li key={i} className="inline-flex items-center gap-1.5">
             <ChevronRight className="h-3 w-3 opacity-50" />
-            {item.to ? (
-              // @ts-expect-error dynamic to
-              <Link to={item.to} params={item.params as never} className="hover:text-navy">
-                {item.label}
-              </Link>
+            {item.href ? (
+              <a href={item.href} className="hover:text-navy">{item.label}</a>
             ) : (
               <span className="text-foreground">{item.label}</span>
             )}
