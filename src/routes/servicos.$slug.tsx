@@ -6,7 +6,7 @@ import { CTASection } from "../components/CTASection";
 import { services, getService } from "../content/services";
 
 export const Route = createFileRoute("/servicos/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { service: import("../content/services").Service } => {
     const service = getService(params.slug);
     if (!service) throw notFound();
     return { service };

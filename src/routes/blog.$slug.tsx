@@ -4,7 +4,7 @@ import { CTASection } from "../components/CTASection";
 import { posts } from "../content/posts";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { post: import("../content/posts").Post } => {
     const post = posts.find((p) => p.slug === params.slug);
     if (!post) throw notFound();
     return { post };
