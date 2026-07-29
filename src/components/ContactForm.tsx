@@ -32,21 +32,11 @@ export function ContactForm({ variant = "contact", defaultService }: Props) {
       return;
     }
     setErrors({});
+    const header = variant === "quote" ? "*PEDIDO DE ORÇAMENTO*" : "*NOVO CONTACTO*";
     const body = encodeURIComponent(
-      [
-        `Nome: ${parsed.data.name}`,
-        `Email: ${parsed.data.email}`,
-        parsed.data.phone && `Telefone: ${parsed.data.phone}`,
-        parsed.data.company && `Empresa: ${parsed.data.company}`,
-        parsed.data.service && `Serviço: ${parsed.data.service}`,
-        "",
-        parsed.data.message,
-      ].filter(Boolean).join("\n"),
+      `${header}\n\n*Nome:* ${parsed.data.name}\n${parsed.data.email ? `*Email:* ${parsed.data.email}\n` : ""}${parsed.data.phone ? `*Telefone:* ${parsed.data.phone}\n` : ""}${parsed.data.company ? `*Empresa:* ${parsed.data.company}\n` : ""}${parsed.data.service ? `*Serviço:* ${parsed.data.service}\n` : ""}\n*Mensagem:*\n${parsed.data.message}`
     );
-    const subject = encodeURIComponent(
-      variant === "quote" ? "Pedido de Orçamento — Website" : "Contacto — Website",
-    );
-    window.location.href = `mailto:${company.emails[0].value}?subject=${subject}&body=${body}`;
+    window.open(`https://wa.me/${company.whatsapp}?text=${body}`, "_blank");
     setStatus("sent");
     (e.target as HTMLFormElement).reset();
   };
@@ -87,7 +77,7 @@ export function ContactForm({ variant = "contact", defaultService }: Props) {
       <div className="sm:col-span-2 flex flex-wrap items-center gap-3 pt-2">
         <button
           type="submit"
-          className="inline-flex items-center justify-center rounded-md bg-navy px-6 py-3 text-sm font-medium text-navy-foreground shadow-sm transition-all hover:bg-navy/90 hover:shadow-md"
+          className="inline-flex items-center justify-center rounded-md bg-orange-brand px-6 py-3 text-sm font-bold text-white shadow-sm transition-all hover:bg-orange-500 hover:shadow-md"
         >
           {variant === "quote" ? "Enviar Pedido de Orçamento" : "Enviar Mensagem"}
         </button>
@@ -95,12 +85,12 @@ export function ContactForm({ variant = "contact", defaultService }: Props) {
           href={`https://wa.me/${company.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-md border border-border bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary"
+          className="inline-flex items-center justify-center rounded-md border border-orange-brand bg-white px-6 py-3 text-sm font-bold text-orange-brand hover:bg-orange-brand/5 transition-colors"
         >
           Falar no WhatsApp
         </a>
         {status === "sent" && (
-          <span className="text-xs text-muted-foreground">A abrir o seu cliente de email…</span>
+          <span className="text-xs text-muted-foreground">A abrir o WhatsApp...</span>
         )}
       </div>
     </form>

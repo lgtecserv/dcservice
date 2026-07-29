@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "./animations/ScrollReveal";
 import { motion } from "framer-motion";
+import { company } from "../content/company";
 
 export function CTASection() {
   return (
@@ -14,11 +15,11 @@ export function CTASection() {
       <div className="container-page relative z-10">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-brand mb-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange-brand mb-6">
               Vamos trabalhar juntos
             </p>
             <h2 className="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
-              Pronto para elevar a operação da sua <span className="text-cyan-brand neon-text italic">empresa?</span>
+              Pronto para elevar a operação da sua <span className="text-orange-brand italic">empresa?</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-white/50 max-w-xl mx-auto">
               Marque uma conversa exploratória sem compromisso. Em 30 minutos ajudamos a clarificar
@@ -26,13 +27,15 @@ export function CTASection() {
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  to="/orcamento"
-                  className="inline-flex items-center gap-2 rounded-full bg-cyan-brand px-8 py-4 text-sm font-bold text-[#0A0A0F] transition-all hover:shadow-[0_0_30px_rgba(34,182,234,0.4)]"
+                <a
+                  href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent("Olá, gostaria de solicitar um orçamento para os vossos serviços.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-orange-brand px-8 py-4 text-sm font-bold text-white transition-all hover:bg-orange-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.4)]"
                 >
                   Solicitar Orçamento
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link

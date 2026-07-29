@@ -22,7 +22,7 @@ export function ClientMarquee() {
         </p>
         
         <div className="flex whitespace-nowrap overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="animate-marquee flex items-center min-w-full">
+          <div className="animate-marquee flex items-center w-max">
             {/* Render 3 sets to ensure continuous loop without gaps */}
             {[...Array(3)].map((_, setIdx) => (
               <div key={setIdx} className="flex shrink-0 items-center justify-around gap-12 md:gap-24 px-6 md:px-12">

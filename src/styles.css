@@ -37,11 +37,20 @@
   --color-navy-foreground: var(--navy-foreground);
   --color-cyan-brand: var(--cyan-brand);
   --color-cyan-brand-foreground: var(--cyan-brand-foreground);
+  --color-orange-brand: var(--orange-brand);
+  --color-orange-brand-foreground: var(--orange-brand-foreground);
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
   /* New premium dark tokens */
   --color-dark-bg: var(--dark-bg);
   --color-dark-surface: var(--dark-surface);
+
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 3)); }
 }
 
 :root {
@@ -64,6 +73,8 @@ body {
   --navy-foreground: #F0F2F8;
   --cyan-brand: #22B6EA;
   --cyan-brand-foreground: #0A1F44;
+  --orange-brand: #F97316;
+  --orange-brand-foreground: #FFFFFF;
   --surface: #F8FAFC;
   --surface-foreground: #0F172A;
 

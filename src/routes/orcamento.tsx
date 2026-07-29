@@ -67,13 +67,13 @@ function Quote() {
             <div className="lg:col-span-5">
               <ScrollReveal>
                 <div className="rounded-3xl border border-[#E2E8F0] bg-white p-8 sm:p-10 shadow-sm h-full">
-                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-brand mb-6">O Nosso Compromisso</div>
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-6">O Nosso Compromisso</div>
                   <h2 className="font-display text-2xl text-[#0A1F44] mb-8">O que pode esperar de nós</h2>
                   
                   <ul className="space-y-6">
                     {promises.map((p, index) => (
                       <li key={p} className="flex items-start gap-4">
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-brand/10 text-cyan-brand">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-brand/10 text-orange-brand">
                           <Check className="h-4 w-4" />
                         </span>
                         <span className="mt-1 text-[#0A1F44] font-medium leading-snug">
@@ -96,7 +96,7 @@ function Quote() {
             <div className="lg:col-span-7">
               <ScrollReveal delay={0.2}>
                 <div className="rounded-3xl border border-[#E2E8F0] bg-white p-8 sm:p-12 shadow-md relative overflow-hidden">
-                  <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-brand/5 blur-3xl pointer-events-none" />
+                  <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-orange-brand/5 blur-3xl pointer-events-none" />
                   
                   <div className="relative z-10">
                     <h2 className="font-display text-3xl text-[#0A1F44] mb-8">Detalhes do Pedido</h2>

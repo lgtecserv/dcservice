@@ -11,8 +11,8 @@ import { TextReveal } from "../components/animations/TextReveal";
 import { ScrollReveal } from "../components/animations/ScrollReveal";
 import { ClientMarquee } from "../components/ClientMarquee";
 import { FAQAccordion } from "../components/FAQAccordion";
-import corporateMeeting from "../assets/corporate_meeting.png";
-import officeAbstract from "../assets/office_abstract.png";
+import corporateMeeting from "../assets/corporate_meeting.jpg";
+import officeAbstract from "../assets/office_abstract.jpeg";
 import avatar1 from "../assets/avatar_1.png";
 import avatar2 from "../assets/avatar_2.png";
 import avatar3 from "../assets/avatar_3.png";
@@ -82,16 +82,21 @@ function Home() {
               className="mt-12 flex flex-wrap items-center gap-4"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/orcamento" className="group inline-flex items-center gap-2 rounded-full bg-cyan-brand px-8 py-4 text-sm font-bold tracking-wide text-[#0A0A0F] transition-all hover:shadow-[0_0_30px_rgba(34,182,234,0.4)]">
+                <a 
+                  href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent("Olá, gostaria de solicitar um orçamento para os vossos serviços.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full bg-orange-brand px-8 py-4 text-sm font-bold tracking-wide text-white transition-all hover:bg-orange-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.4)]"
+                >
                   Solicitar Orçamento <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </a>
               </motion.div>
               <motion.a
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 href={`https://wa.me/${company.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full glass px-8 py-4 text-sm font-medium tracking-wide text-white transition-all hover:border-cyan-brand/30"
+                className="inline-flex items-center rounded-full bg-orange-brand px-8 py-4 text-sm font-bold tracking-wide text-white transition-all hover:bg-orange-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.4)]"
               >
                 Falar no WhatsApp
               </motion.a>
@@ -140,7 +145,7 @@ function Home() {
             {/* TEXT COLUMN */}
             <div>
               <ScrollReveal>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-6">
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-6">
                   Quem Somos
                 </p>
                 <h2 className="font-display text-4xl leading-tight text-[#0A1F44] sm:text-5xl md:text-6xl mb-8">
@@ -153,7 +158,7 @@ function Home() {
                   e resultados mensuráveis. Combinamos experiência sectorial com uma cultura de execução
                   disciplinada.
                 </p>
-                <Link to="/quem-somos" className="group inline-flex items-center gap-3 rounded-full border border-[#E2E8F0] px-6 py-3 text-sm font-bold uppercase tracking-widest text-[#0A1F44] hover:border-cyan-brand hover:bg-[#F8FAFC] hover:text-cyan-brand transition-all">
+                <Link to="/quem-somos" className="group inline-flex items-center gap-3 rounded-full bg-orange-brand px-6 py-3 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-500 hover:shadow-lg transition-all">
                   Conhecer a empresa <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </ScrollReveal>
@@ -204,10 +209,10 @@ function Home() {
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
               <div className="max-w-3xl">
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-6">Áreas de atuação</p>
-                <h2 className="font-display text-5xl text-white sm:text-6xl">Serviços <span className="text-cyan-brand neon-text italic">Integrados</span></h2>
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-6">Áreas de atuação</p>
+                <h2 className="font-display text-5xl text-white sm:text-6xl">Serviços <span className="text-orange-brand italic">Integrados</span></h2>
               </div>
-              <Link to="/servicos" className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-white/70 hover:text-cyan-brand transition-colors">
+              <Link to="/servicos" className="group inline-flex items-center gap-3 rounded-full border border-white/20 px-6 py-3 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-brand hover:border-orange-brand hover:shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all">
                 Explorar Áreas <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
               </Link>
             </div>
@@ -237,7 +242,7 @@ function Home() {
             {/* Pilares */}
             <div>
               <ScrollReveal>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-6">Porque escolher</p>
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-6">Porque escolher</p>
                 <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl mb-12">
                   A nova forma de contratar.
                 </h2>
@@ -264,7 +269,7 @@ function Home() {
           {/* Processo - Separado por baixo */}
           <div className="mt-32">
             <ScrollReveal>
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-6 text-center">Como trabalhamos</p>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-6 text-center">Como trabalhamos</p>
               <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl mb-16 text-center">
                 Método disciplinado.
               </h2>
@@ -295,7 +300,7 @@ function Home() {
         
         <div className="container-page relative z-10">
           <ScrollReveal>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-4 text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-4 text-center">
               Reputação
             </p>
             <h2 className="font-display text-4xl text-white sm:text-5xl text-center mb-16">
@@ -333,7 +338,7 @@ function Home() {
       <section className="section-light py-32">
         <div className="container-page">
           <ScrollReveal>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-4 text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-4 text-center">
               Dúvidas
             </p>
             <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl text-center mb-16">

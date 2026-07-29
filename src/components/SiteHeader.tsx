@@ -90,12 +90,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            to="/orcamento"
-            className="hidden sm:inline-flex items-center rounded-full bg-[#0A1F44] px-6 py-2.5 text-sm font-medium text-white transition-all hover:bg-cyan-brand hover:text-[#0A1F44] hover:shadow-[0_0_25px_rgba(34,182,234,0.3)]"
+          <a
+            href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent("Olá, gostaria de solicitar um orçamento para os vossos serviços.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center rounded-full bg-orange-brand px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-orange-500 hover:shadow-[0_0_25px_rgba(249,115,22,0.4)]"
           >
             Solicitar Orçamento
-          </Link>
+          </a>
           <button
             type="button"
             className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg text-[#0A1F44] hover:bg-slate-100"
@@ -120,13 +122,15 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              to="/orcamento"
+            <a
+              href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent("Olá, gostaria de solicitar um orçamento para os vossos serviços.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-[#0A1F44] px-4 py-3 text-center text-sm font-medium text-white hover:bg-cyan-brand hover:text-[#0A1F44] transition-all"
+              className="mt-2 rounded-full bg-orange-brand px-4 py-3 text-center text-sm font-bold text-white hover:bg-orange-500 transition-all shadow-sm"
             >
               Solicitar Orçamento
-            </Link>
+            </a>
           </nav>
         </div>
       )}

@@ -4,7 +4,7 @@ import { services } from "../content/services";
 import { posts } from "../content/posts";
 
 // TODO: replace with your project URL once a project name or custom domain is set.
-const BASE_URL = "";
+const BASE_URL = "https://dcservice.co.mz";
 
 interface SitemapEntry {
   path: string;

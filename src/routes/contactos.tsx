@@ -60,13 +60,13 @@ function Contact() {
             {/* Contact Info */}
             <div className="lg:col-span-5 space-y-4">
               <ScrollReveal>
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-brand mb-6">Canais de Comunicação</div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-6">Canais de Comunicação</div>
               </ScrollReveal>
 
               {company.phones.map((p, index) => (
                 <ScrollReveal key={p.tel} delay={index * 0.05}>
-                  <a href={`tel:${p.tel}`} className="group flex items-center gap-6 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-brand/30">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F1F5F9] text-[#0A1F44] transition-colors group-hover:bg-cyan-brand/10 group-hover:text-cyan-brand">
+                  <a href={`tel:${p.tel}`} className="group flex items-center gap-6 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-orange-brand/30">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F1F5F9] text-[#0A1F44] transition-colors group-hover:bg-orange-brand/10 group-hover:text-orange-brand">
                       <Phone className="h-5 w-5" />
                     </span>
                     <div>
@@ -79,8 +79,8 @@ function Contact() {
 
               {company.emails.map((e, index) => (
                 <ScrollReveal key={e.value} delay={0.1 + (index * 0.05)}>
-                  <a href={`mailto:${e.value}`} className="group flex items-center gap-6 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-brand/30">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F1F5F9] text-[#0A1F44] transition-colors group-hover:bg-cyan-brand/10 group-hover:text-cyan-brand">
+                  <a href={`mailto:${e.value}`} className="group flex items-center gap-6 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-orange-brand/30">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F1F5F9] text-[#0A1F44] transition-colors group-hover:bg-orange-brand/10 group-hover:text-orange-brand">
                       <Mail className="h-5 w-5" />
                     </span>
                     <div>
@@ -93,7 +93,7 @@ function Contact() {
 
               <ScrollReveal delay={0.2}>
                 <div className="flex items-center gap-6 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-brand/10 text-cyan-brand">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-brand/10 text-orange-brand">
                     <MapPin className="h-5 w-5" />
                   </span>
                   <div>
@@ -105,7 +105,7 @@ function Contact() {
 
               <ScrollReveal delay={0.25}>
                 <div className="flex items-center gap-6 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-brand/10 text-cyan-brand">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-brand/10 text-orange-brand">
                     <Clock className="h-5 w-5" />
                   </span>
                   <div>

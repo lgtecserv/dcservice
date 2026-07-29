@@ -13,13 +13,12 @@ export const company = {
     { label: "Geral", value: "geral@dcservice.co.mz" },
     { label: "Direção", value: "dchongole@dcservice.co.mz" },
   ],
-  whatsapp: "258863013135",
+  whatsapp: "258845393269",
   address: "Maputo, Moçambique",
   hours: "Segunda a Sexta · 08h00 – 17h00",
   social: {
-    linkedin: "#",
-    facebook: "#",
-    instagram: "#",
+    facebook: "https://www.facebook.com/share/18ncAQUUVu/",
+    instagram: "https://www.instagram.com/dc_service_lda?igsh=YTQxNTRsdGZ2eWFm",
   },
 } as const;
 

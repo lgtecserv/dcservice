@@ -73,8 +73,8 @@ function About() {
         <div className="container-page">
           <div className="grid gap-8 md:grid-cols-3">
             <ScrollReveal delay={0.1}>
-              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-cyan-brand/30">
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-brand mb-4">O que fazemos</div>
+              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-brand/30">
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">O que fazemos</div>
                 <h2 className="font-display text-3xl text-[#0A1F44] mb-4">Missão</h2>
                 <p className="text-[#64748B] leading-relaxed">
                   Fornecer soluções empresariais integradas que aumentam a competitividade, a eficiência
@@ -83,8 +83,8 @@ function About() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-cyan-brand/30">
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-brand mb-4">Onde vamos</div>
+              <div className="rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-brand/30">
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">Onde vamos</div>
                 <h2 className="font-display text-3xl text-[#0A1F44] mb-4">Visão</h2>
                 <p className="text-[#64748B] leading-relaxed">
                   Ser reconhecida como a empresa multidisciplinar de referência em Moçambique e um
@@ -93,8 +93,8 @@ function About() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-cyan-brand/30">
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-brand mb-4">Como agimos</div>
+              <div className="rounded-3xl border border-[#E2E8F0] bg-white p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-brand/30">
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">Como agimos</div>
                 <h2 className="font-display text-3xl text-[#0A1F44] mb-4">Compromisso</h2>
                 <p className="text-[#64748B] leading-relaxed">
                   Cumprir o que prometemos, com transparência, ética e responsabilidade em cada
@@ -115,7 +115,7 @@ function About() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <div className="h-16 w-16 mx-auto mb-4 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
-              <span className="h-2 w-2 bg-cyan-brand rounded-full animate-pulse shadow-[0_0_10px_rgba(34,182,234,0.8)]" />
+              <span className="h-2 w-2 bg-orange-brand rounded-full animate-pulse shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ function About() {
         <div className="container-page">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-4">Os Nossos Princípios</p>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-4">Os Nossos Princípios</p>
               <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl">Valores Fundamentais</h2>
             </div>
           </ScrollReveal>
@@ -137,7 +137,7 @@ function About() {
             {values.map((v, index) => (
               <ScrollReveal key={v.title} delay={index * 0.1}>
                 <div className="group rounded-2xl border border-[#E2E8F0] bg-white p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#F8FAFC] text-[#0A1F44] transition-colors group-hover:bg-cyan-brand group-hover:text-white mb-6">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#F8FAFC] text-[#0A1F44] transition-colors group-hover:bg-orange-brand group-hover:text-white mb-6">
                     <span className="font-display text-2xl">{index + 1}</span>
                   </div>
                   <h3 className="text-xl font-bold text-[#0A1F44] mb-3">{v.title}</h3>
@@ -156,7 +156,7 @@ function About() {
         <div className="container-page max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-20">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-4">O Nosso Caminho</p>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-4">O Nosso Caminho</p>
               <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl">A Nossa Trajetória</h2>
             </div>
             
@@ -164,10 +164,10 @@ function About() {
               {timeline.map((t, i) => (
                 <div key={t.year} className="relative pb-16 last:pb-0 group">
                   {/* Timeline Dot */}
-                  <span className="absolute -left-[41px] md:-left-[57px] flex h-5 w-5 items-center justify-center rounded-full bg-white border-2 border-cyan-brand shadow-[0_0_10px_rgba(34,182,234,0.5)] transition-transform duration-300 group-hover:scale-125" />
+                  <span className="absolute -left-[41px] md:-left-[57px] flex h-5 w-5 items-center justify-center rounded-full bg-white border-2 border-orange-brand shadow-[0_0_10px_rgba(249,115,22,0.5)] transition-transform duration-300 group-hover:scale-125" />
                   
-                  <div className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-8 transition-all duration-300 group-hover:border-cyan-brand/30 group-hover:bg-white group-hover:shadow-md">
-                    <div className="text-sm font-bold tracking-[0.2em] text-cyan-brand mb-2">{t.year}</div>
+                  <div className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-8 transition-all duration-300 group-hover:border-orange-brand/30 group-hover:bg-white group-hover:shadow-md">
+                    <div className="text-sm font-bold tracking-[0.2em] text-orange-brand mb-2">{t.year}</div>
                     <h3 className="text-2xl font-display text-[#0A1F44] mb-3">{t.title}</h3>
                     <p className="text-base text-[#64748B] leading-relaxed">{t.text}</p>
                     
