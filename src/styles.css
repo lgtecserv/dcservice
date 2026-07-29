@@ -45,6 +45,14 @@
 }
 
 :root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   --radius: 0.5rem;
 
   /* Premium Dark Palette */

@@ -7,18 +7,20 @@ import { FAQAccordion } from "../../components/FAQAccordion";
 import { TextReveal } from "../../components/animations/TextReveal";
 import { ScrollReveal } from "../../components/animations/ScrollReveal";
 import { services, getService } from "../../content/services";
+import serviceDetailImg from "../../assets/service_detail.png";
 
 export const Route = createFileRoute("/servicos/$slug")({
-  loader: ({ params }): { service: import("../../content/services").Service } => {
+  loader: ({ params }) => {
     const service = getService(params.slug);
     if (!service) throw notFound();
-    return { service };
+    return { slug: params.slug };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
       return { meta: [{ title: "Serviço não encontrado" }, { name: "robots", content: "noindex" }] };
     }
-    const s = loaderData.service;
+    const s = getService(loaderData.slug);
+    if (!s) return {};
     return {
       meta: [
         { title: `${s.title} — DC SERVICE, LDA` },
@@ -46,7 +48,8 @@ export const Route = createFileRoute("/servicos/$slug")({
 });
 
 function ServiceDetail() {
-  const { service: s } = Route.useLoaderData() as { service: import("../../content/services").Service };
+  const { slug } = Route.useLoaderData();
+  const s = getService(slug)!;
   const Icon = s.icon;
   const related = services.filter((x) => x.slug !== s.slug).slice(0, 3);
 
@@ -106,6 +109,11 @@ function ServiceDetail() {
             <div className="lg:col-span-8 space-y-20">
               
               <ScrollReveal>
+                <div className="relative w-full h-[350px] md:h-[450px] mb-12 rounded-[2rem] overflow-hidden shadow-2xl group">
+                  <img src={serviceDetailImg} alt="Visualização do serviço" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F44]/40 to-transparent" />
+                  <div className="absolute inset-0 border border-white/20 rounded-[2rem] pointer-events-none" />
+                </div>
                 <div className="prose prose-lg max-w-none text-[#64748B]">
                   <h2 className="font-display text-3xl text-[#0A1F44] mb-6">O que envolve este serviço?</h2>
                   <p className="leading-relaxed">{s.description}</p>
@@ -115,12 +123,13 @@ function ServiceDetail() {
               <ScrollReveal>
                 <div className="grid gap-6 sm:grid-cols-2">
                   {/* Problemas resolvidos - Cartão */}
-                  <div className="rounded-2xl border border-[#E2E8F0] bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-red-500/20">
-                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-red-500 mb-6">Problemas que resolvemos</h3>
-                    <ul className="space-y-4">
+                  <div className="relative overflow-hidden rounded-3xl border border-[#E2E8F0] bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-red-500/30 group">
+                    <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-red-500/5 transition-transform duration-500 group-hover:scale-150" />
+                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-red-500 mb-6 relative z-10">Problemas que resolvemos</h3>
+                    <ul className="space-y-4 relative z-10">
                       {s.problems.map((p) => (
                         <li key={p} className="flex items-start gap-3 text-sm text-[#0A1F44]/80">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600 mt-0.5">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600 mt-0.5 border border-red-100">
                             <X className="h-3 w-3" />
                           </span>
                           <span className="leading-relaxed">{p}</span>
@@ -130,12 +139,13 @@ function ServiceDetail() {
                   </div>
 
                   {/* Beneficios - Cartão */}
-                  <div className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-cyan-brand/30">
-                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-brand mb-6">Benefícios garantidos</h3>
-                    <ul className="space-y-4">
+                  <div className="relative overflow-hidden rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-cyan-brand/40 group">
+                    <div className="absolute -left-10 -bottom-10 h-32 w-32 rounded-full bg-cyan-brand/10 transition-transform duration-500 group-hover:scale-150" />
+                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-brand mb-6 relative z-10">Benefícios garantidos</h3>
+                    <ul className="space-y-4 relative z-10">
                       {s.benefits.map((b) => (
                         <li key={b} className="flex items-start gap-3 text-sm text-[#0A1F44]">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-brand/20 text-cyan-brand mt-0.5">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-brand/20 text-cyan-brand mt-0.5 border border-cyan-brand/30">
                             <Check className="h-3 w-3" />
                           </span>
                           <span className="font-medium leading-relaxed">{b}</span>

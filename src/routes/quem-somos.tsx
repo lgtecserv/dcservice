@@ -4,6 +4,9 @@ import { CTASection } from "../components/CTASection";
 import { ScrollReveal } from "../components/animations/ScrollReveal";
 import { TextReveal } from "../components/animations/TextReveal";
 import aboutImg from "../assets/about-team.jpg";
+import aboutBannerImg from "../assets/about_banner.png";
+import timeline1Img from "../assets/timeline_1.png";
+import timeline2Img from "../assets/timeline_2.png";
 
 export const Route = createFileRoute("/quem-somos")({
   head: () => ({
@@ -104,6 +107,21 @@ function About() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
+          BANNER VISUAL INTERMÉDIO
+      ══════════════════════════════════════════════════════════════════ */}
+      <section className="relative h-[300px] lg:h-[400px] w-full overflow-hidden">
+        <img src={aboutBannerImg} alt="Sede Corporativa" className="w-full h-full object-cover fixed-attachment" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F44] via-[#0A1F44]/40 to-transparent mix-blend-multiply" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <div className="h-16 w-16 mx-auto mb-4 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
+              <span className="h-2 w-2 bg-cyan-brand rounded-full animate-pulse shadow-[0_0_10px_rgba(34,182,234,0.8)]" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════
           VALORES — Light Section (Gray Background)
       ══════════════════════════════════════════════════════════════════ */}
       <section className="section-light py-20 lg:py-32 bg-[#F1F5F9]">
@@ -152,6 +170,17 @@ function About() {
                     <div className="text-sm font-bold tracking-[0.2em] text-cyan-brand mb-2">{t.year}</div>
                     <h3 className="text-2xl font-display text-[#0A1F44] mb-3">{t.title}</h3>
                     <p className="text-base text-[#64748B] leading-relaxed">{t.text}</p>
+                    
+                    {t.year === "2010" && (
+                      <div className="mt-6 rounded-xl overflow-hidden h-48 border border-[#E2E8F0]">
+                        <img src={timeline1Img} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Fundação 2010" />
+                      </div>
+                    )}
+                    {t.year === "Hoje" && (
+                      <div className="mt-6 rounded-xl overflow-hidden h-48 border border-[#E2E8F0]">
+                        <img src={timeline2Img} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Multidisciplinar Hoje" />
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

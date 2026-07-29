@@ -32,9 +32,9 @@ export function SiteHeader() {
           : "bg-white/90 backdrop-blur-xl border-b border-[#E2E8F0]/50"
       }`}
     >
-      <div className="container-page flex h-20 items-center justify-between">
+      <div className="container-page flex h-28 items-center justify-between">
         <Link to="/" className="flex items-center" aria-label={company.name}>
-          <img src={logo} alt="DC SERVICE, LDA" className="h-16 w-auto object-contain" />
+          <img src={logo} alt="DC SERVICE, LDA" className="h-24 w-auto object-contain py-2" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

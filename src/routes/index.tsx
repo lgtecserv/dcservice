@@ -11,6 +11,11 @@ import { TextReveal } from "../components/animations/TextReveal";
 import { ScrollReveal } from "../components/animations/ScrollReveal";
 import { ClientMarquee } from "../components/ClientMarquee";
 import { FAQAccordion } from "../components/FAQAccordion";
+import corporateMeeting from "../assets/corporate_meeting.png";
+import officeAbstract from "../assets/office_abstract.png";
+import avatar1 from "../assets/avatar_1.png";
+import avatar2 from "../assets/avatar_2.png";
+import avatar3 from "../assets/avatar_3.png";
 
 export const Route = createFileRoute("/")(
   {
@@ -129,31 +134,48 @@ function Home() {
       {/* ══════════════════════════════════════════════════════════════════
           QUEM SOMOS — Light Section
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="section-light py-32">
+      <section className="section-light py-32 overflow-hidden">
         <div className="container-page">
-          <ScrollReveal>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-8">
-              Quem Somos
-            </p>
-          </ScrollReveal>
-          <div className="grid lg:grid-cols-12 gap-16">
-            <div className="lg:col-span-8">
-              <ScrollReveal delay={0.1}>
-                <h2 className="font-display text-5xl leading-tight text-[#0A1F44] sm:text-6xl md:text-7xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* TEXT COLUMN */}
+            <div>
+              <ScrollReveal>
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-6">
+                  Quem Somos
+                </p>
+                <h2 className="font-display text-4xl leading-tight text-[#0A1F44] sm:text-5xl md:text-6xl mb-8">
                   Um parceiro corporativo sério, moderno e <span className="italic text-cyan-brand">multidisciplinar.</span>
                 </h2>
               </ScrollReveal>
-            </div>
-            <div className="lg:col-span-4 lg:pt-4">
               <ScrollReveal delay={0.2}>
-                <p className="text-lg font-light leading-relaxed text-[#64748B] mb-6">
+                <p className="text-lg font-light leading-relaxed text-[#64748B] mb-8">
                   A DC SERVICE, LDA foi construída para servir organizações que exigem rigor, discrição
                   e resultados mensuráveis. Combinamos experiência sectorial com uma cultura de execução
                   disciplinada.
                 </p>
-                <Link to="/quem-somos" className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#0A1F44] hover:text-cyan-brand transition-colors">
-                  Conhecer a empresa <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
+                <Link to="/quem-somos" className="group inline-flex items-center gap-3 rounded-full border border-[#E2E8F0] px-6 py-3 text-sm font-bold uppercase tracking-widest text-[#0A1F44] hover:border-cyan-brand hover:bg-[#F8FAFC] hover:text-cyan-brand transition-all">
+                  Conhecer a empresa <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
+              </ScrollReveal>
+            </div>
+            
+            {/* IMAGE COLUMN */}
+            <div className="relative">
+              <ScrollReveal delay={0.4}>
+                <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl">
+                  <img src={corporateMeeting} loading="lazy" alt="Equipa Corporativa" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                  <div className="absolute inset-0 border-2 border-white/20 rounded-3xl pointer-events-none" />
+                </div>
+                {/* Decorative floating glass card */}
+                <div className="absolute -bottom-10 -left-10 hidden sm:flex items-center gap-4 glass-card bg-white/90 backdrop-blur-md border border-white p-6 rounded-2xl shadow-xl animate-float">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-brand/10">
+                    <Shield className="h-6 w-6 text-cyan-brand" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-[#0A1F44]">Foco em Resultados</div>
+                    <div className="text-xs text-[#64748B]">Abordagem estratégica</div>
+                  </div>
+                </div>
               </ScrollReveal>
             </div>
           </div>
@@ -200,14 +222,23 @@ function Home() {
       {/* ══════════════════════════════════════════════════════════════════
           PILARES & PROCESSO — Light Section with Glass Cards
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="section-light py-32">
+      <section className="section-light py-32 bg-[#F8FAFC]">
         <div className="container-page">
-          <div className="grid lg:grid-cols-12 gap-20">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Imagem Abstrata */}
+            <div className="hidden lg:block relative h-[650px] w-full rounded-[40px] overflow-hidden shadow-xl">
+              <ScrollReveal delay={0.2}>
+                <img src={officeAbstract} loading="lazy" alt="Inovação e Tecnologia" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-brand/20 to-transparent mix-blend-multiply" />
+                <div className="absolute inset-0 border border-white/50 rounded-[40px] pointer-events-none" />
+              </ScrollReveal>
+            </div>
+
             {/* Pilares */}
-            <div className="lg:col-span-6">
+            <div>
               <ScrollReveal>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-6">Porque escolher</p>
-                <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl mb-16">
+                <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl mb-12">
                   A nova forma de contratar.
                 </h2>
               </ScrollReveal>
@@ -216,8 +247,8 @@ function Home() {
                   const Icon = [Shield, Zap, Check, Globe2][i] ?? Check;
                   return (
                     <ScrollReveal key={p.title} delay={0.1 * i}>
-                      <div className="rounded-2xl border border-[#E2E8F0] bg-white p-6 transition-all hover:border-cyan-brand/30 hover:shadow-[0_0_30px_-5px_rgba(34,182,234,0.1)]">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-brand/10 mb-5">
+                      <div className="rounded-2xl border border-[#E2E8F0] bg-white p-6 transition-all hover:border-cyan-brand/30 hover:shadow-[0_0_30px_-5px_rgba(34,182,234,0.1)] h-full">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F8FAFC] mb-5">
                           <Icon className="h-6 w-6 text-cyan-brand" strokeWidth={1.5} />
                         </div>
                         <h3 className="text-lg font-semibold text-[#0A1F44] mb-2">{p.title}</h3>
@@ -228,28 +259,26 @@ function Home() {
                 })}
               </div>
             </div>
-            
-            {/* Processo */}
-            <div className="lg:col-span-6">
-               <ScrollReveal>
-                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-6">Como trabalhamos</p>
-                 <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl mb-16">
-                   Método disciplinado.
-                 </h2>
-               </ScrollReveal>
-               <div className="space-y-8">
-                 {processSteps.map((s, i) => (
-                   <ScrollReveal key={s.n} delay={0.1 * i}>
-                     <div className="flex gap-6 group rounded-2xl border border-[#E2E8F0] bg-white p-6 transition-all hover:border-cyan-brand/30 hover:shadow-[0_0_30px_-5px_rgba(34,182,234,0.1)]">
-                       <div className="font-display text-5xl text-[#0A1F44]/10 transition-colors group-hover:text-cyan-brand/30">{s.n}</div>
-                       <div>
-                         <h3 className="text-lg font-semibold text-[#0A1F44] mb-2">{s.title}</h3>
-                         <p className="text-sm font-light leading-relaxed text-[#64748B]">{s.text}</p>
-                       </div>
-                     </div>
-                   </ScrollReveal>
-                 ))}
-               </div>
+          </div>
+          
+          {/* Processo - Separado por baixo */}
+          <div className="mt-32">
+            <ScrollReveal>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-brand mb-6 text-center">Como trabalhamos</p>
+              <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl mb-16 text-center">
+                Método disciplinado.
+              </h2>
+            </ScrollReveal>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {processSteps.map((s, i) => (
+                <ScrollReveal key={s.n} delay={0.1 * i}>
+                  <div className="flex flex-col gap-4 group rounded-3xl border border-[#E2E8F0] bg-white p-8 transition-all hover:-translate-y-2 hover:shadow-lg h-full">
+                    <div className="font-display text-6xl text-[#E2E8F0] transition-colors group-hover:text-cyan-brand/20 mb-4">{s.n}</div>
+                    <h3 className="text-xl font-semibold text-[#0A1F44] mb-2">{s.title}</h3>
+                    <p className="text-sm font-light leading-relaxed text-[#64748B] flex-1">{s.text}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </div>
@@ -274,19 +303,26 @@ function Home() {
             </h2>
           </ScrollReveal>
           <div className="grid gap-8 lg:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={t.author} delay={0.1 * i}>
-                <figure className="flex flex-col h-full rounded-2xl glass-card p-8 transition-all hover:glass-card-hover">
-                  <blockquote className="flex-1 font-display text-xl leading-relaxed text-white/80 italic">
-                    "{t.quote}"
-                  </blockquote>
-                  <figcaption className="mt-8 pt-6 border-t border-white/[0.06]">
-                    <div className="text-sm font-bold tracking-wide text-white">{t.author}</div>
-                    <div className="mt-1 text-xs text-white/40 uppercase tracking-widest">{t.role}</div>
-                  </figcaption>
-                </figure>
-              </ScrollReveal>
-            ))}
+            {testimonials.map((t, i) => {
+              const avatars = [avatar1, avatar2, avatar3];
+              const avatar = avatars[i % avatars.length];
+              return (
+                <ScrollReveal key={t.author} delay={0.1 * i}>
+                  <figure className="flex flex-col h-full rounded-2xl glass-card p-8 transition-all hover:glass-card-hover relative mt-6">
+                    <div className="absolute -top-6 left-8 h-12 w-12 rounded-full overflow-hidden border-2 border-[#111118] shadow-lg">
+                      <img src={avatar} loading="lazy" alt={t.author} className="w-full h-full object-cover" />
+                    </div>
+                    <blockquote className="flex-1 mt-4 font-display text-xl leading-relaxed text-white/80 italic">
+                      "{t.quote}"
+                    </blockquote>
+                    <figcaption className="mt-8 pt-6 border-t border-white/[0.06]">
+                      <div className="text-sm font-bold tracking-wide text-white">{t.author}</div>
+                      <div className="mt-1 text-xs text-white/40 uppercase tracking-widest">{t.role}</div>
+                    </figcaption>
+                  </figure>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
