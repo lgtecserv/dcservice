@@ -14,7 +14,7 @@ export function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex h-9 items-center justify-center rounded-lg border border-input bg-background px-3 text-sm font-medium hover:bg-slate-100 transition-colors"
+      className="flex h-9 items-center justify-center rounded-lg border border-slate-200 bg-white px-3 text-sm font-medium text-slate-800 hover:bg-slate-100 transition-colors shadow-sm"
       aria-label="Mudar idioma"
     >
       {i18n.language === "en" ? "PT" : "EN"}
