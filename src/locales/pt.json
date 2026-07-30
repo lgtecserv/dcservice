@@ -1,0 +1,215 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Quem Somos",
+    "services": "Serviços",
+    "contact": "Contactos"
+  },
+  "header": {
+    "quote": "Solicitar Orçamento",
+    "quoteMessage": "Olá, gostaria de solicitar um orçamento para os vossos serviços."
+  },
+  "root": {
+    "404": {
+      "title": "404",
+      "subtitle": "Página não encontrada",
+      "description": "A página que procura não existe ou foi movida.",
+      "back": "Voltar ao início"
+    },
+    "error": {
+      "title": "Esta página não carregou",
+      "description": "Ocorreu um problema. Tente novamente ou volte à página inicial.",
+      "retry": "Tentar novamente",
+      "back": "Ir para o início"
+    }
+  },
+  "language": {
+    "pt": "PT",
+    "en": "EN"
+  },
+  "home": {
+    "hero": {
+      "badge": "Consultoria · Tecnologia · Internacional",
+      "title": "Soluções empresariais integradas para operações de excelência.",
+      "highlight": "integradas",
+      "description": "Um único parceiro para consultoria, tecnologia, segurança cibernética, logística, procurement, recursos humanos, contabilidade e comércio internacional em Moçambique.",
+      "quote": "Solicitar Orçamento",
+      "whatsapp": "Falar no WhatsApp"
+    },
+    "about": {
+      "badge": "Quem Somos",
+      "title": "Um parceiro corporativo sério, moderno e <highlight>multidisciplinar.</highlight>",
+      "description": "A DC SERVICE, LDA foi construída para servir organizações que exigem rigor, discrição e resultados mensuráveis. Combinamos experiência sectorial com uma cultura de execução disciplinada.",
+      "cta": "Conhecer a empresa",
+      "floatTitle": "Foco em Resultados",
+      "floatDesc": "Abordagem estratégica"
+    },
+    "services": {
+      "badge": "Áreas de atuação",
+      "title": "Serviços <highlight>Integrados</highlight>",
+      "cta": "Explorar Áreas"
+    },
+    "pillars": {
+      "badge": "Porque escolher",
+      "title": "A nova forma de contratar."
+    },
+    "process": {
+      "badge": "O nosso processo",
+      "title": "Como trabalhamos."
+    },
+    "testimonials": {
+      "badge": "O que dizem",
+      "title": "Clientes de Excelência"
+    },
+    "faq": {
+      "badge": "Perguntas Frequentes",
+      "title": "Tem Dúvidas?"
+    }
+  },
+  "serviceDetail": {
+    "badge": "Especializado",
+    "quote": "Solicitar Orçamento",
+    "quoteMessage": "Olá, gostaria de solicitar um orçamento para os vossos serviços.",
+    "learnMore": "Saiba Mais",
+    "our": "Nossos",
+    "whyChoose": "Por Que Escolher Nossos",
+    "whyChooseDesc": "A nossa equipa utiliza as melhores práticas e tecnologia de ponta para garantir a máxima qualidade em cada projeto.",
+    "highlight": "Destaque",
+    "implementation": "Implementação profissional de",
+    "commitment": "Compromisso com a excelência e adaptação às necessidades do seu negócio.",
+    "included": "O Que Está Incluído",
+    "includedDesc": "Cada projeto inclui tudo o que precisa para garantir o sucesso do seu empreendimento.",
+    "followup": "Acompanhamento rigoroso em todas as etapas, desde a avaliação até à entrega final do serviço.",
+    "faq": "Dúvidas Frequentes",
+    "needServices": "Precisa de Serviços de",
+    "callToAction": "Entre em contacto connosco hoje e receba um orçamento personalizado para o seu projeto."
+  },
+  "servicesIndex": {
+    "breadcrumbs": "Serviços",
+    "title": "Serviços empresariais entregues por uma única equipa.",
+    "description": "Dez áreas complementares, com metodologia formal, indicadores mensuráveis e um único ponto de contacto.",
+    "readMore": "Saber mais"
+  },
+  "about": {
+    "breadcrumbs": "Quem Somos",
+    "heroTitle": "Um parceiro corporativo, construído para durar.",
+    "heroDesc": "Nascemos em Moçambique com a ambição de oferecer serviços empresariais ao padrão que os melhores mercados exigem — sem prescindir do conhecimento profundo da realidade local.",
+    "whatWeDo": "O que fazemos",
+    "missionTitle": "Missão",
+    "missionDesc": "Fornecer soluções empresariais integradas que aumentam a competitividade, a eficiência e a segurança das organizações que servimos.",
+    "whereWeGo": "Onde vamos",
+    "visionTitle": "Visão",
+    "visionDesc": "Ser reconhecida como a empresa multidisciplinar de referência em Moçambique e um parceiro credível para operações regionais na África Austral.",
+    "howWeAct": "Como agimos",
+    "commitmentTitle": "Compromisso",
+    "commitmentDesc": "Cumprir o que prometemos, com transparência, ética e responsabilidade em cada interação com clientes, colaboradores e comunidade.",
+    "valuesBadge": "O nosso ADN",
+    "valuesTitle": "Valores que guiam cada decisão.",
+    "values": {
+      "rigor": {
+        "title": "Rigor",
+        "text": "Compromissos claros, medidos e cumpridos."
+      },
+      "confidentiality": {
+        "title": "Confidencialidade",
+        "text": "Discrição absoluta em cada engajamento."
+      },
+      "excellence": {
+        "title": "Excelência",
+        "text": "Padrão internacional, executado localmente."
+      },
+      "partnership": {
+        "title": "Parceria",
+        "text": "Relação de longo prazo, orientada a resultados."
+      }
+    },
+    "historyBadge": "O nosso percurso",
+    "historyTitle": "Uma década de transformação.",
+    "historyDesc": "De uma consultoria local a uma empresa corporativa multidisciplinar, o nosso percurso é marcado por crescimento sustentado e adaptação.",
+    "timeline": {
+      "y2010": {
+        "title": "Fundação",
+        "text": "Início da atividade em Maputo com foco em consultoria e informática."
+      },
+      "y2014": {
+        "title": "Expansão",
+        "text": "Alargamento a serviços de logística, procurement e recursos humanos."
+      },
+      "y2019": {
+        "title": "Cibersegurança",
+        "text": "Criação da unidade de segurança cibernética e serviços geridos."
+      },
+      "y2023": {
+        "title": "Comércio Internacional",
+        "text": "Operações estruturadas de importação e exportação na SADC."
+      },
+      "today": {
+        "title": "Multidisciplinar",
+        "text": "Dez áreas de atuação sob uma única marca corporativa."
+      }
+    }
+  },
+  "contact": {
+    "breadcrumbs": "Contactos",
+    "title": "Fale com a nossa equipa.",
+    "description": "Seja para um projeto imediato ou para uma parceria de longo prazo, estamos prontos para ouvir e estruturar a melhor solução.",
+    "infoTitle": "Informação de Contacto",
+    "infoDesc": "A nossa equipa está disponível para responder às suas questões.",
+    "location": "Sede Operacional",
+    "phones": "Contactos Telefónicos",
+    "emails": "Correio Eletrónico",
+    "hours": "Horário de Funcionamento",
+    "headquarters": "Sede"
+  },
+  "contactForm": {
+    "name": "Nome completo",
+    "email": "Email profissional",
+    "service": "Área de interesse",
+    "message": "Como podemos ajudar?",
+    "sending": "A enviar...",
+    "send": "Enviar Mensagem",
+    "selectArea": "Selecione a área",
+    "nameLabel": "Nome *",
+    "namePlaceholder": "O seu nome",
+    "nameError": "Nome muito curto",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "voce@empresa.com",
+    "emailError": "Email inválido",
+    "phoneLabel": "Telefone",
+    "phonePlaceholder": "+258 ...",
+    "companyLabel": "Empresa",
+    "companyPlaceholder": "Nome da empresa",
+    "serviceLabel": "Serviço de interesse",
+    "servicePlaceholder": "Ex.: Consultoria, Informática...",
+    "messageLabel": "Mensagem *",
+    "messagePlaceholder": "Descreva o que procura...",
+    "messageError": "Descreva um pouco mais",
+    "sendQuote": "Enviar Pedido de Orçamento",
+    "sendMessage": "Enviar Mensagem",
+    "talkWhatsapp": "Falar no WhatsApp",
+    "openingWhatsapp": "A abrir o WhatsApp..."
+  },
+  "quote": {
+    "breadcrumbs": "Orçamento",
+    "title": "Solicite um orçamento estruturado.",
+    "description": "Preencha o formulário abaixo. A nossa equipa comercial entrará em contacto num prazo de 24 horas úteis com uma proposta ou pedido de reunião de alinhamento.",
+    "commitmentBadge": "O Nosso Compromisso",
+    "commitmentTitle": "O que pode esperar de nós",
+    "promises": [
+      "Resposta em até 24h úteis",
+      "Consultor sénior dedicado",
+      "Proposta clara, sem letra pequena",
+      "Confidencialidade garantida (NDA por defeito)"
+    ],
+    "quoteMsg": "\"Os nossos orçamentos são detalhados, transparentes e construídos à medida da realidade da sua empresa.\"",
+    "formTitle": "Detalhes do Pedido"
+  },
+  "cta": {
+    "badge": "Vamos trabalhar juntos",
+    "title": "Pronto para elevar a operação da sua",
+    "titleHighlight": "empresa?",
+    "desc": "Marque uma conversa exploratória sem compromisso. Em 30 minutos ajudamos a clarificar objetivos e próximos passos.",
+    "quoteBtn": "Solicitar Orçamento",
+    "contactBtn": "Falar Connosco"
+  }
+}

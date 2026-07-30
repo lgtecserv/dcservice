@@ -1,10 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
 import logo from "../assets/logo.png";
-import { company } from "../content/company";
-import { services } from "../content/services";
+import { useCompany } from "../content/company";
+import { useServices } from "../content/services";
 
 export function SiteFooter() {
+  const company = useCompany();
+  const services = useServices();
+
   return (
     <footer className="bg-[#060609] text-white border-t border-white/[0.04]">
       <div className="container-page py-16">

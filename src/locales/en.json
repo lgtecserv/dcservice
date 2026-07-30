@@ -1,0 +1,215 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "header": {
+    "quote": "Request Quote",
+    "quoteMessage": "Hello, I would like to request a quote for your services."
+  },
+  "root": {
+    "404": {
+      "title": "404",
+      "subtitle": "Page not found",
+      "description": "The page you are looking for does not exist or has been moved.",
+      "back": "Back to Home"
+    },
+    "error": {
+      "title": "This page failed to load",
+      "description": "A problem occurred. Try again or go back to the homepage.",
+      "retry": "Try again",
+      "back": "Go to Home"
+    }
+  },
+  "language": {
+    "pt": "PT",
+    "en": "EN"
+  },
+  "home": {
+    "hero": {
+      "badge": "Consulting · Technology · International",
+      "title": "Integrated business solutions for operational excellence.",
+      "highlight": "Integrated",
+      "description": "A single partner for consulting, technology, cybersecurity, logistics, procurement, human resources, accounting and international trade in Mozambique.",
+      "quote": "Request a Quote",
+      "whatsapp": "Chat on WhatsApp"
+    },
+    "about": {
+      "badge": "About Us",
+      "title": "A serious, modern and <highlight>multidisciplinary</highlight> corporate partner.",
+      "description": "DC SERVICE, LDA was built to serve organizations that demand rigor, discretion and measurable results. We combine industry expertise with a culture of disciplined execution.",
+      "cta": "Get to know the company",
+      "floatTitle": "Focus on Results",
+      "floatDesc": "Strategic approach"
+    },
+    "services": {
+      "badge": "Areas of Expertise",
+      "title": "<highlight>Integrated</highlight> Services",
+      "cta": "Explore Areas"
+    },
+    "pillars": {
+      "badge": "Why choose us",
+      "title": "The new way to hire."
+    },
+    "process": {
+      "badge": "Our process",
+      "title": "How we work."
+    },
+    "testimonials": {
+      "badge": "What they say",
+      "title": "Clients of Excellence"
+    },
+    "faq": {
+      "badge": "Frequently Asked Questions",
+      "title": "Have Questions?"
+    }
+  },
+  "serviceDetail": {
+    "badge": "Specialized",
+    "quote": "Request Quote",
+    "quoteMessage": "Hello, I would like to request a quote for your services.",
+    "learnMore": "Learn More",
+    "our": "Our",
+    "whyChoose": "Why Choose Our",
+    "whyChooseDesc": "Our team uses the best practices and cutting-edge technology to ensure the highest quality in every project.",
+    "highlight": "Highlight",
+    "implementation": "Professional implementation of",
+    "commitment": "Commitment to excellence and adaptation to your business needs.",
+    "included": "What's Included",
+    "includedDesc": "Each project includes everything you need to ensure the success of your enterprise.",
+    "followup": "Rigorous monitoring at all stages, from assessment to final service delivery.",
+    "faq": "Frequently Asked Questions",
+    "needServices": "Need Services of",
+    "callToAction": "Contact us today and receive a customized quote for your project."
+  },
+  "servicesIndex": {
+    "breadcrumbs": "Services",
+    "title": "Corporate services delivered by a single team.",
+    "description": "Ten complementary areas, with formal methodology, measurable indicators, and a single point of contact.",
+    "readMore": "Learn more"
+  },
+  "about": {
+    "breadcrumbs": "About Us",
+    "heroTitle": "A corporate partner, built to last.",
+    "heroDesc": "We were born in Mozambique with the ambition of offering corporate services to the standard that the best markets demand — without compromising deep knowledge of the local reality.",
+    "whatWeDo": "What we do",
+    "missionTitle": "Mission",
+    "missionDesc": "Provide integrated business solutions that increase the competitiveness, efficiency and security of the organizations we serve.",
+    "whereWeGo": "Where we go",
+    "visionTitle": "Vision",
+    "visionDesc": "To be recognized as the reference multidisciplinary company in Mozambique and a credible partner for regional operations in Southern Africa.",
+    "howWeAct": "How we act",
+    "commitmentTitle": "Commitment",
+    "commitmentDesc": "Fulfill what we promise, with transparency, ethics and responsibility in every interaction with clients, employees and the community.",
+    "valuesBadge": "Our DNA",
+    "valuesTitle": "Values that guide every decision.",
+    "values": {
+      "rigor": {
+        "title": "Rigor",
+        "text": "Clear, measured and fulfilled commitments."
+      },
+      "confidentiality": {
+        "title": "Confidentiality",
+        "text": "Absolute discretion in every engagement."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "text": "International standard, executed locally."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "text": "Long-term relationship, results-oriented."
+      }
+    },
+    "historyBadge": "Our journey",
+    "historyTitle": "A decade of transformation.",
+    "historyDesc": "From a local consultancy to a multidisciplinary corporate company, our journey is marked by sustained growth and adaptation.",
+    "timeline": {
+      "y2010": {
+        "title": "Foundation",
+        "text": "Start of activity in Maputo focusing on consulting and IT."
+      },
+      "y2014": {
+        "title": "Expansion",
+        "text": "Expansion into logistics, procurement and human resources services."
+      },
+      "y2019": {
+        "title": "Cybersecurity",
+        "text": "Creation of the cybersecurity and managed services unit."
+      },
+      "y2023": {
+        "title": "International Trade",
+        "text": "Structured import and export operations in the SADC."
+      },
+      "today": {
+        "title": "Multidisciplinary",
+        "text": "Ten areas of expertise under a single corporate brand."
+      }
+    }
+  },
+  "contact": {
+    "breadcrumbs": "Contact",
+    "title": "Talk to our team.",
+    "description": "Whether for an immediate project or a long-term partnership, we are ready to listen and structure the best solution.",
+    "infoTitle": "Contact Information",
+    "infoDesc": "Our team is available to answer your questions.",
+    "location": "Operational Headquarters",
+    "phones": "Phone Contacts",
+    "emails": "Email",
+    "hours": "Working Hours",
+    "headquarters": "Headquarters"
+  },
+  "contactForm": {
+    "name": "Full Name",
+    "email": "Professional Email",
+    "service": "Area of Interest",
+    "message": "How can we help?",
+    "sending": "Sending...",
+    "send": "Send Message",
+    "selectArea": "Select an area",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your name",
+    "nameError": "Name too short",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "you@company.com",
+    "emailError": "Invalid email",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+258 ...",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Company name",
+    "serviceLabel": "Service of interest",
+    "servicePlaceholder": "E.g., Consulting, IT...",
+    "messageLabel": "Message *",
+    "messagePlaceholder": "Describe what you are looking for...",
+    "messageError": "Please describe a bit more",
+    "sendQuote": "Send Quote Request",
+    "sendMessage": "Send Message",
+    "talkWhatsapp": "Talk on WhatsApp",
+    "openingWhatsapp": "Opening WhatsApp..."
+  },
+  "quote": {
+    "breadcrumbs": "Quote",
+    "title": "Request a structured quote.",
+    "description": "Fill out the form below. Our commercial team will contact you within 24 business hours with a proposal or request for an alignment meeting.",
+    "commitmentBadge": "Our Commitment",
+    "commitmentTitle": "What you can expect from us",
+    "promises": [
+      "Response within 24 business hours",
+      "Dedicated senior consultant",
+      "Clear proposal, no small print",
+      "Guaranteed confidentiality (NDA by default)"
+    ],
+    "quoteMsg": "\"Our quotes are detailed, transparent, and tailor-made for your company's reality.\"",
+    "formTitle": "Request Details"
+  },
+  "cta": {
+    "badge": "Let's work together",
+    "title": "Ready to elevate your",
+    "titleHighlight": "company's operation?",
+    "desc": "Schedule a no-obligation exploratory conversation. In 30 minutes we can help clarify your objectives and next steps.",
+    "quoteBtn": "Request Quote",
+    "contactBtn": "Talk to Us"
+  }
+}

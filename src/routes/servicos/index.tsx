@@ -2,9 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { CTASection } from "../../components/CTASection";
-import { services } from "../../content/services";
+import { useServices } from "../../content/services";
 import { ScrollReveal } from "../../components/animations/ScrollReveal";
 import { TextReveal } from "../../components/animations/TextReveal";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/servicos/")({
   head: () => ({
@@ -20,7 +21,9 @@ export const Route = createFileRoute("/servicos/")({
   component: ServicesIndex,
 });
 
-function ServicesIndex() {
+export function ServicesIndex() {
+  const { t } = useTranslation();
+  const services = useServices();
   return (
     <>
       {/* ══════════════════════════════════════════════════════════════════
@@ -34,15 +37,15 @@ function ServicesIndex() {
         </div>
 
         <div className="container-page relative z-10">
-          <Breadcrumbs items={[{ label: "Serviços" }]} />
+          <Breadcrumbs items={[{ label: t("servicesIndex.breadcrumbs") }]} />
           
           <div className="mt-8">
             <ScrollReveal>
               <h1 className="max-w-3xl font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-                <TextReveal text="Serviços empresariais entregues por uma única equipa." />
+                <TextReveal text={t("servicesIndex.title")} />
               </h1>
               <p className="mt-6 max-w-2xl text-xl leading-relaxed text-white/70">
-                Dez áreas complementares, com metodologia formal, indicadores mensuráveis e um único ponto de contacto.
+                {t("servicesIndex.description")}
               </p>
             </ScrollReveal>
           </div>
@@ -72,7 +75,7 @@ function ServicesIndex() {
                   <p className="mt-4 flex-1 text-base leading-relaxed text-[#64748B] group-hover:text-[#64748B]/80">{s.short}</p>
                   
                   <div className="mt-8 flex items-center gap-2 text-sm font-bold tracking-wider uppercase text-[#0A1F44] transition-colors group-hover:text-cyan-brand">
-                    Ver detalhes 
+                    {t("servicesIndex.readMore")}
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 </Link>

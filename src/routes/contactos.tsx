@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { ContactForm } from "../components/ContactForm";
-import { company } from "../content/company";
+import { useCompany } from "../content/company";
 import { ScrollReveal } from "../components/animations/ScrollReveal";
 import { TextReveal } from "../components/animations/TextReveal";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/contactos")({
   head: () => ({
@@ -20,7 +21,10 @@ export const Route = createFileRoute("/contactos")({
   component: Contact,
 });
 
-function Contact() {
+export function Contact() {
+  const { t } = useTranslation();
+  const company = useCompany();
+
   return (
     <>
       {/* ══════════════════════════════════════════════════════════════════
@@ -34,16 +38,15 @@ function Contact() {
         </div>
 
         <div className="container-page relative z-10">
-          <Breadcrumbs items={[{ label: "Contactos" }]} />
+          <Breadcrumbs items={[{ label: t("contact.breadcrumbs") }]} />
           
           <div className="mt-8 max-w-4xl">
             <ScrollReveal>
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-                <TextReveal text="Fale com a nossa equipa." />
+                <TextReveal text={t("contact.title")} />
               </h1>
               <p className="mt-8 text-xl leading-relaxed text-white/70">
-                Estamos disponíveis para responder a pedidos comerciais, propostas de parceria e
-                questões técnicas. Respondemos em até 24h úteis.
+                {t("contact.description")}
               </p>
             </ScrollReveal>
           </div>
@@ -60,7 +63,7 @@ function Contact() {
             {/* Contact Info */}
             <div className="lg:col-span-5 space-y-4">
               <ScrollReveal>
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-6">Canais de Comunicação</div>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-6">{t("contact.infoTitle")}</div>
               </ScrollReveal>
 
               {company.phones.map((p, index) => (
@@ -97,7 +100,7 @@ function Contact() {
                     <MapPin className="h-5 w-5" />
                   </span>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-[#64748B]">Escritório</div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-[#64748B]">{t("contact.headquarters")}</div>
                     <div className="text-lg font-semibold text-[#0A1F44]">{company.address}</div>
                   </div>
                 </div>
@@ -109,7 +112,7 @@ function Contact() {
                     <Clock className="h-5 w-5" />
                   </span>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-[#64748B]">Horário</div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-[#64748B]">{t("contact.hours")}</div>
                     <div className="text-lg font-semibold text-[#0A1F44]">{company.hours}</div>
                   </div>
                 </div>
@@ -120,9 +123,9 @@ function Contact() {
             <div className="lg:col-span-7">
               <ScrollReveal delay={0.3}>
                 <div className="rounded-3xl border border-[#E2E8F0] bg-white p-8 sm:p-12 shadow-md">
-                  <h2 className="font-display text-3xl text-[#0A1F44]">Envie-nos uma mensagem</h2>
+                  <h2 className="font-display text-3xl text-[#0A1F44]">{t("contact.title")}</h2>
                   <p className="mt-3 text-sm text-[#64748B] mb-8">
-                    Preencha o formulário. Respondemos em até 24h úteis.
+                    {t("quote.description")}
                   </p>
                   <ContactForm />
                 </div>

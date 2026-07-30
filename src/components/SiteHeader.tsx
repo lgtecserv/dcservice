@@ -1,18 +1,23 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import logo from "../assets/logo.png";
-import { services } from "../content/services";
-import { company } from "../content/company";
+import { useServices } from "../content/services";
+import { useCompany } from "../content/company";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const navItems: { to: string; label: string; hasMenu?: boolean }[] = [
-  { to: "/", label: "Início" },
-  { to: "/quem-somos", label: "Quem Somos" },
-  { to: "/servicos", label: "Serviços", hasMenu: true },
-  { to: "/contactos", label: "Contactos" },
+const navItems: { to: string; labelKey: string; hasMenu?: boolean }[] = [
+  { to: "/", labelKey: "nav.home" },
+  { to: "/quem-somos", labelKey: "nav.about" },
+  { to: "/servicos", labelKey: "nav.services", hasMenu: true },
+  { to: "/contactos", labelKey: "nav.contact" },
 ];
 
 export function SiteHeader() {
+  const { t } = useTranslation();
+  const services = useServices();
+  const company = useCompany();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -51,7 +56,7 @@ export function SiteHeader() {
                   className="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-[#0A1F44]/80 transition-colors hover:text-cyan-brand"
                   activeProps={{ className: "text-cyan-brand" }}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                   <ChevronDown className="h-3.5 w-3.5" />
                 </Link>
                 {servicesOpen && (
@@ -83,20 +88,21 @@ export function SiteHeader() {
                 className="px-4 py-2 text-sm font-medium text-[#0A1F44]/80 transition-colors hover:text-cyan-brand"
                 activeProps={{ className: "text-cyan-brand" }}
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             ),
           )}
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
           <a
-            href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent("Olá, gostaria de solicitar um orçamento para os vossos serviços.")}`}
+            href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent(t("header.quoteMessage"))}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center rounded-full bg-orange-brand px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-orange-500 hover:shadow-[0_0_25px_rgba(249,115,22,0.4)]"
           >
-            Solicitar Orçamento
+            {t("header.quote")}
           </a>
           <button
             type="button"
@@ -119,17 +125,17 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-4 py-3 text-sm font-medium text-[#0A1F44]/80 hover:bg-slate-50 hover:text-cyan-brand transition-colors"
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             ))}
             <a
-              href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent("Olá, gostaria de solicitar um orçamento para os vossos serviços.")}`}
+              href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent(t("header.quoteMessage"))}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-orange-brand px-4 py-3 text-center text-sm font-bold text-white hover:bg-orange-500 transition-all shadow-sm"
             >
-              Solicitar Orçamento
+              {t("header.quote")}
             </a>
           </nav>
         </div>

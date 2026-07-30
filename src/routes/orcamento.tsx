@@ -4,6 +4,7 @@ import { ContactForm } from "../components/ContactForm";
 import { Check } from "lucide-react";
 import { ScrollReveal } from "../components/animations/ScrollReveal";
 import { TextReveal } from "../components/animations/TextReveal";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/orcamento")({
   head: () => ({
@@ -19,14 +20,10 @@ export const Route = createFileRoute("/orcamento")({
   component: Quote,
 });
 
-const promises = [
-  "Resposta em até 24h úteis",
-  "Consultor sénior dedicado",
-  "Proposta clara, sem letra pequena",
-  "Confidencialidade garantida (NDA por defeito)",
-];
+export function Quote() {
+  const { t } = useTranslation();
+  const promises = t("quote.promises", { returnObjects: true }) as string[];
 
-function Quote() {
   return (
     <>
       {/* ══════════════════════════════════════════════════════════════════
@@ -40,16 +37,15 @@ function Quote() {
         </div>
 
         <div className="container-page relative z-10">
-          <Breadcrumbs items={[{ label: "Orçamento" }]} />
+          <Breadcrumbs items={[{ label: t("quote.breadcrumbs") }]} />
           
           <div className="mt-8 max-w-4xl">
             <ScrollReveal>
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-                <TextReveal text="Peça o seu orçamento." />
+                <TextReveal text={t("quote.title")} />
               </h1>
               <p className="mt-8 text-xl leading-relaxed text-white/70">
-                Descreva-nos o que precisa. Um consultor sénior analisa o pedido e responde com uma
-                proposta estruturada.
+                {t("quote.description")}
               </p>
             </ScrollReveal>
           </div>
@@ -67,8 +63,8 @@ function Quote() {
             <div className="lg:col-span-5">
               <ScrollReveal>
                 <div className="rounded-3xl border border-[#E2E8F0] bg-white p-8 sm:p-10 shadow-sm h-full">
-                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-6">O Nosso Compromisso</div>
-                  <h2 className="font-display text-2xl text-[#0A1F44] mb-8">O que pode esperar de nós</h2>
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-6">{t("quote.commitmentBadge")}</div>
+                  <h2 className="font-display text-2xl text-[#0A1F44] mb-8">{t("quote.commitmentTitle")}</h2>
                   
                   <ul className="space-y-6">
                     {promises.map((p, index) => (
@@ -85,7 +81,7 @@ function Quote() {
 
                   <div className="mt-12 rounded-2xl bg-[#F1F5F9] p-6 border border-[#E2E8F0]">
                     <p className="text-sm text-[#64748B] italic">
-                      "Os nossos orçamentos são detalhados, transparentes e construídos à medida da realidade da sua empresa."
+                      {t("quote.quoteMsg")}
                     </p>
                   </div>
                 </div>
@@ -99,7 +95,7 @@ function Quote() {
                   <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-orange-brand/5 blur-3xl pointer-events-none" />
                   
                   <div className="relative z-10">
-                    <h2 className="font-display text-3xl text-[#0A1F44] mb-8">Detalhes do Pedido</h2>
+                    <h2 className="font-display text-3xl text-[#0A1F44] mb-8">{t("quote.formTitle")}</h2>
                     <ContactForm variant="quote" />
                   </div>
                 </div>

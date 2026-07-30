@@ -11,11 +11,18 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactosRouteImport } from './routes/contactos'
+import { Route as EnRouteImport } from './routes/en'
 import { Route as OrcamentoRouteImport } from './routes/orcamento'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as EnIndexRouteImport } from './routes/en.index'
+import { Route as EnContactosRouteImport } from './routes/en.contactos'
+import { Route as EnOrcamentoRouteImport } from './routes/en.orcamento'
+import { Route as EnQuemSomosRouteImport } from './routes/en.quem-somos'
 import { Route as ServicosIndexRouteImport } from './routes/servicos/index'
 import { Route as ServicosSlugRouteImport } from './routes/servicos/$slug'
+import { Route as EnServicosIndexRouteImport } from './routes/en.servicos.index'
+import { Route as EnServicosSlugRouteImport } from './routes/en.servicos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -25,6 +32,11 @@ const IndexRoute = IndexRouteImport.update({
 const ContactosRoute = ContactosRouteImport.update({
   id: '/contactos',
   path: '/contactos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnRoute = EnRouteImport.update({
+  id: '/en',
+  path: '/en',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OrcamentoRoute = OrcamentoRouteImport.update({
@@ -42,6 +54,26 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnContactosRoute = EnContactosRouteImport.update({
+  id: '/contactos',
+  path: '/contactos',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnOrcamentoRoute = EnOrcamentoRouteImport.update({
+  id: '/orcamento',
+  path: '/orcamento',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnQuemSomosRoute = EnQuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
+  getParentRoute: () => EnRoute,
+} as any)
 const ServicosIndexRoute = ServicosIndexRouteImport.update({
   id: '/servicos/',
   path: '/servicos/',
@@ -52,15 +84,32 @@ const ServicosSlugRoute = ServicosSlugRouteImport.update({
   path: '/servicos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnServicosIndexRoute = EnServicosIndexRouteImport.update({
+  id: '/servicos/',
+  path: '/servicos/',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnServicosSlugRoute = EnServicosSlugRouteImport.update({
+  id: '/servicos/$slug',
+  path: '/servicos/$slug',
+  getParentRoute: () => EnRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contactos': typeof ContactosRoute
+  '/en': typeof EnRouteWithChildren
   '/orcamento': typeof OrcamentoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/en/contactos': typeof EnContactosRoute
+  '/en/orcamento': typeof EnOrcamentoRoute
+  '/en/quem-somos': typeof EnQuemSomosRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/en/': typeof EnIndexRoute
   '/servicos/': typeof ServicosIndexRoute
+  '/en/servicos/$slug': typeof EnServicosSlugRoute
+  '/en/servicos/': typeof EnServicosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -68,29 +117,49 @@ export interface FileRoutesByTo {
   '/orcamento': typeof OrcamentoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/en/contactos': typeof EnContactosRoute
+  '/en/orcamento': typeof EnOrcamentoRoute
+  '/en/quem-somos': typeof EnQuemSomosRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/en': typeof EnIndexRoute
   '/servicos': typeof ServicosIndexRoute
+  '/en/servicos/$slug': typeof EnServicosSlugRoute
+  '/en/servicos': typeof EnServicosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contactos': typeof ContactosRoute
+  '/en': typeof EnRouteWithChildren
   '/orcamento': typeof OrcamentoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/en/contactos': typeof EnContactosRoute
+  '/en/orcamento': typeof EnOrcamentoRoute
+  '/en/quem-somos': typeof EnQuemSomosRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/en/': typeof EnIndexRoute
   '/servicos/': typeof ServicosIndexRoute
+  '/en/servicos/$slug': typeof EnServicosSlugRoute
+  '/en/servicos/': typeof EnServicosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/contactos'
+    | '/en'
     | '/orcamento'
     | '/quem-somos'
     | '/sitemap.xml'
+    | '/en/contactos'
+    | '/en/orcamento'
+    | '/en/quem-somos'
     | '/servicos/$slug'
+    | '/en/'
     | '/servicos/'
+    | '/en/servicos/$slug'
+    | '/en/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -98,22 +167,36 @@ export interface FileRouteTypes {
     | '/orcamento'
     | '/quem-somos'
     | '/sitemap.xml'
+    | '/en/contactos'
+    | '/en/orcamento'
+    | '/en/quem-somos'
     | '/servicos/$slug'
+    | '/en'
     | '/servicos'
+    | '/en/servicos/$slug'
+    | '/en/servicos'
   id:
     | '__root__'
     | '/'
     | '/contactos'
+    | '/en'
     | '/orcamento'
     | '/quem-somos'
     | '/sitemap.xml'
+    | '/en/contactos'
+    | '/en/orcamento'
+    | '/en/quem-somos'
     | '/servicos/$slug'
+    | '/en/'
     | '/servicos/'
+    | '/en/servicos/$slug'
+    | '/en/servicos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactosRoute: typeof ContactosRoute
+  EnRoute: typeof EnRouteWithChildren
   OrcamentoRoute: typeof OrcamentoRoute
   QuemSomosRoute: typeof QuemSomosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -137,6 +220,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en': {
+      id: '/en'
+      path: '/en'
+      fullPath: '/en'
+      preLoaderRoute: typeof EnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/orcamento': {
       id: '/orcamento'
       path: '/orcamento'
@@ -158,6 +248,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en/': {
+      id: '/en/'
+      path: '/'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/contactos': {
+      id: '/en/contactos'
+      path: '/contactos'
+      fullPath: '/en/contactos'
+      preLoaderRoute: typeof EnContactosRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/orcamento': {
+      id: '/en/orcamento'
+      path: '/orcamento'
+      fullPath: '/en/orcamento'
+      preLoaderRoute: typeof EnOrcamentoRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/quem-somos': {
+      id: '/en/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/en/quem-somos'
+      preLoaderRoute: typeof EnQuemSomosRouteImport
+      parentRoute: typeof EnRoute
+    }
     '/servicos/': {
       id: '/servicos/'
       path: '/servicos'
@@ -172,12 +290,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en/servicos/': {
+      id: '/en/servicos/'
+      path: '/servicos'
+      fullPath: '/en/servicos/'
+      preLoaderRoute: typeof EnServicosIndexRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/servicos/$slug': {
+      id: '/en/servicos/$slug'
+      path: '/servicos/$slug'
+      fullPath: '/en/servicos/$slug'
+      preLoaderRoute: typeof EnServicosSlugRouteImport
+      parentRoute: typeof EnRoute
+    }
   }
 }
+
+interface EnRouteChildren {
+  EnContactosRoute: typeof EnContactosRoute
+  EnOrcamentoRoute: typeof EnOrcamentoRoute
+  EnQuemSomosRoute: typeof EnQuemSomosRoute
+  EnIndexRoute: typeof EnIndexRoute
+  EnServicosSlugRoute: typeof EnServicosSlugRoute
+  EnServicosIndexRoute: typeof EnServicosIndexRoute
+}
+
+const EnRouteChildren: EnRouteChildren = {
+  EnContactosRoute: EnContactosRoute,
+  EnOrcamentoRoute: EnOrcamentoRoute,
+  EnQuemSomosRoute: EnQuemSomosRoute,
+  EnIndexRoute: EnIndexRoute,
+  EnServicosSlugRoute: EnServicosSlugRoute,
+  EnServicosIndexRoute: EnServicosIndexRoute,
+}
+
+const EnRouteWithChildren = EnRoute._addFileChildren(EnRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactosRoute: ContactosRoute,
+  EnRoute: EnRouteWithChildren,
   OrcamentoRoute: OrcamentoRoute,
   QuemSomosRoute: QuemSomosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

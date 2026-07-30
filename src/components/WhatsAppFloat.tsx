@@ -1,7 +1,9 @@
 import { MessageCircle } from "lucide-react";
-import { company } from "../content/company";
+import { useCompany } from "../content/company";
 
 export function WhatsAppFloat() {
+  const company = useCompany();
+
   return (
     <a
       href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent("Olá, gostaria de mais informações sobre os vossos serviços.")}`}

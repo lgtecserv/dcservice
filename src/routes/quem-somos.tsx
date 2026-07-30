@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { CTASection } from "../components/CTASection";
 import { ScrollReveal } from "../components/animations/ScrollReveal";
@@ -22,22 +23,24 @@ export const Route = createFileRoute("/quem-somos")({
   component: About,
 });
 
-const values = [
-  { title: "Rigor", text: "Compromissos claros, medidos e cumpridos." },
-  { title: "Confidencialidade", text: "Discrição absoluta em cada engajamento." },
-  { title: "Excelência", text: "Padrão internacional, executado localmente." },
-  { title: "Parceria", text: "Relação de longo prazo, orientada a resultados." },
-];
+export function About() {
+  const { t } = useTranslation();
+  
+  const values = [
+    { title: t("about.values.rigor.title"), text: t("about.values.rigor.text") },
+    { title: t("about.values.confidentiality.title"), text: t("about.values.confidentiality.text") },
+    { title: t("about.values.excellence.title"), text: t("about.values.excellence.text") },
+    { title: t("about.values.partnership.title"), text: t("about.values.partnership.text") },
+  ];
 
-const timeline = [
-  { year: "2010", title: "Fundação", text: "Início da atividade em Maputo com foco em consultoria e informática." },
-  { year: "2014", title: "Expansão", text: "Alargamento a serviços de logística, procurement e recursos humanos." },
-  { year: "2019", title: "Cibersegurança", text: "Criação da unidade de segurança cibernética e serviços geridos." },
-  { year: "2023", title: "Comércio Internacional", text: "Operações estruturadas de importação e exportação na SADC." },
-  { year: "Hoje", title: "Multidisciplinar", text: "Dez áreas de atuação sob uma única marca corporativa." },
-];
+  const timeline = [
+    { year: "2010", title: t("about.timeline.y2010.title"), text: t("about.timeline.y2010.text") },
+    { year: "2014", title: t("about.timeline.y2014.title"), text: t("about.timeline.y2014.text") },
+    { year: "2019", title: t("about.timeline.y2019.title"), text: t("about.timeline.y2019.text") },
+    { year: "2023", title: t("about.timeline.y2023.title"), text: t("about.timeline.y2023.text") },
+    { year: "Hoje", title: t("about.timeline.today.title"), text: t("about.timeline.today.text") },
+  ];
 
-function About() {
   return (
     <>
       {/* ══════════════════════════════════════════════════════════════════
@@ -51,15 +54,15 @@ function About() {
         </div>
 
         <div className="container-page relative z-10">
-          <Breadcrumbs items={[{ label: "Quem Somos" }]} />
+          <Breadcrumbs items={[{ label: t("about.breadcrumbs") }]} />
           
           <div className="mt-8 max-w-4xl">
             <ScrollReveal>
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-                <TextReveal text="Um parceiro corporativo, construído para durar." />
+                <TextReveal text={t("about.heroTitle")} />
               </h1>
               <p className="mt-8 text-xl leading-relaxed text-white/70">
-                Nascemos em Moçambique com a ambição de oferecer serviços empresariais ao padrão que os melhores mercados exigem — sem prescindir do conhecimento profundo da realidade local.
+                {t("about.heroDesc")}
               </p>
             </ScrollReveal>
           </div>
@@ -74,31 +77,28 @@ function About() {
           <div className="grid gap-8 md:grid-cols-3">
             <ScrollReveal delay={0.1}>
               <div className="rounded-3xl border border-[#E2E8F0] bg-white p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-brand/30">
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">O que fazemos</div>
-                <h2 className="font-display text-3xl text-[#0A1F44] mb-4">Missão</h2>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">{t("about.whatWeDo")}</div>
+                <h2 className="font-display text-3xl text-[#0A1F44] mb-4">{t("about.missionTitle")}</h2>
                 <p className="text-[#64748B] leading-relaxed">
-                  Fornecer soluções empresariais integradas que aumentam a competitividade, a eficiência
-                  e a segurança das organizações que servimos.
+                  {t("about.missionDesc")}
                 </p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <div className="rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-brand/30">
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">Onde vamos</div>
-                <h2 className="font-display text-3xl text-[#0A1F44] mb-4">Visão</h2>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">{t("about.whereWeGo")}</div>
+                <h2 className="font-display text-3xl text-[#0A1F44] mb-4">{t("about.visionTitle")}</h2>
                 <p className="text-[#64748B] leading-relaxed">
-                  Ser reconhecida como a empresa multidisciplinar de referência em Moçambique e um
-                  parceiro credível para operações regionais na África Austral.
+                  {t("about.visionDesc")}
                 </p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <div className="rounded-3xl border border-[#E2E8F0] bg-white p-10 h-full shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-brand/30">
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">Como agimos</div>
-                <h2 className="font-display text-3xl text-[#0A1F44] mb-4">Compromisso</h2>
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-orange-brand mb-4">{t("about.howWeAct")}</div>
+                <h2 className="font-display text-3xl text-[#0A1F44] mb-4">{t("about.commitmentTitle")}</h2>
                 <p className="text-[#64748B] leading-relaxed">
-                  Cumprir o que prometemos, com transparência, ética e responsabilidade em cada
-                  interação com clientes, parceiros e colaboradores.
+                  {t("about.commitmentDesc")}
                 </p>
               </div>
             </ScrollReveal>
@@ -128,8 +128,8 @@ function About() {
         <div className="container-page">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-4">Os Nossos Princípios</p>
-              <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl">Valores Fundamentais</h2>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-4">{t("about.valuesBadge")}</p>
+              <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl">{t("about.valuesTitle")}</h2>
             </div>
           </ScrollReveal>
           
@@ -156,8 +156,8 @@ function About() {
         <div className="container-page max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-20">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-4">O Nosso Caminho</p>
-              <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl">A Nossa Trajetória</h2>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-brand mb-4">{t("about.historyBadge")}</p>
+              <h2 className="font-display text-4xl text-[#0A1F44] sm:text-5xl">{t("about.historyTitle")}</h2>
             </div>
             
             <div className="relative border-l-2 border-[#E2E8F0] pl-8 md:pl-12 ml-4 md:ml-0">
