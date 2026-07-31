@@ -240,7 +240,7 @@ export function Home() {
         <div className="container-page">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Imagem Abstrata */}
-            <div className="hidden lg:block relative h-[650px] w-full rounded-[40px] overflow-hidden shadow-xl">
+            <div className="relative h-[400px] lg:h-[650px] w-full rounded-[40px] overflow-hidden shadow-xl">
               <ScrollReveal delay={0.2}>
                 <img src={porqueEscolherImg} loading="lazy" alt="Inovação e Tecnologia" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-cyan-brand/20 to-transparent mix-blend-multiply" />
