@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Shield, Zap, Globe2 } from "lucide-react";
 import { useTranslation, Trans } from "react-i18next";
 import hero from "../assets/image hero setion dc service.jpeg";
+import porqueEscolherImg from "../assets/imagem da sessao Porque escolher.jpeg";
 import { useServices } from "../content/services";
 import { useStats, usePillars, useProcessSteps, useTestimonials, useCompany, useFaqs } from "../content/company";
 import { StatCounter } from "../components/StatCounter";
@@ -13,7 +14,6 @@ import { ScrollReveal } from "../components/animations/ScrollReveal";
 import { ClientMarquee } from "../components/ClientMarquee";
 import { FAQAccordion } from "../components/FAQAccordion";
 import corporateMeeting from "../assets/corporate_meeting.jpg";
-import officeAbstract from "../assets/office_abstract.jpeg";
 import avatar1 from "../assets/avatar_1.png";
 import avatar2 from "../assets/avatar_2.png";
 import avatar3 from "../assets/avatar_3.png";
@@ -242,7 +242,7 @@ export function Home() {
             {/* Imagem Abstrata */}
             <div className="hidden lg:block relative h-[650px] w-full rounded-[40px] overflow-hidden shadow-xl">
               <ScrollReveal delay={0.2}>
-                <img src={officeAbstract} loading="lazy" alt="Inovação e Tecnologia" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+                <img src={porqueEscolherImg} loading="lazy" alt="Inovação e Tecnologia" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-cyan-brand/20 to-transparent mix-blend-multiply" />
                 <div className="absolute inset-0 border border-white/50 rounded-[40px] pointer-events-none" />
               </ScrollReveal>
