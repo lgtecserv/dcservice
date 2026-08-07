@@ -9,6 +9,7 @@ import {
   PackageSearch,
   Handshake,
   Ship,
+  Globe,
   type LucideIcon,
 } from "lucide-react";
 
@@ -22,6 +23,7 @@ import imgLogistica from "../assets/service_logistica.jpg";
 import imgProcurement from "../assets/service_procurement.jpg";
 import imgParcerias from "../assets/service_parcerias.jpg";
 import imgImportacao from "../assets/service_importacao.jpg";
+import imgCommodities from "../assets/service_commodities.png";
 
 export type Service = {
   slug: string;
@@ -410,6 +412,39 @@ export const services: Service[] = [
     faqs: [
       { q: "Fazem exportação de produtos locais?", a: "Sim, incluindo apoio à obtenção de certificados de origem." },
       { q: "Trabalham com carga contentorizada e break-bulk?", a: "Sim, ambas as modalidades." },
+    ],
+  },
+  {
+    slug: "commodities",
+    title: "Comércio de Commodities",
+    short: "Comercialização global e integrada de produtos agrícolas, minerais e energéticos.",
+    icon: Globe,
+    image: imgCommodities,
+    intro: "Conectamos mercados globais com um portfólio diversificado de commodities, assegurando qualidade, rastreabilidade e eficiência logística.",
+    description: "Operamos em todo o espetro de commodities — agrícolas, minerais e energéticas — oferecendo soluções de aprovisionamento, comercialização e logística. Garantimos transações seguras e mitigação de riscos num mercado internacional volátil.",
+    problems: [
+      "Volatilidade de preços",
+      "Riscos logísticos e aduaneiros",
+      "Dificuldade de acesso a fornecedores fiáveis",
+      "Falta de garantia de qualidade (assurances)",
+    ],
+    benefits: [
+      "Acesso a uma rede global de parceiros",
+      "Gestão integrada da cadeia de fornecimento",
+      "Mitigação de riscos de mercado",
+      "Controlo rigoroso de qualidade",
+    ],
+    how: [
+      { title: "Análise", text: "Avaliação de tendências de mercado e necessidades de sourcing." },
+      { title: "Sourcing", text: "Contratação de produtores e fornecedores certificados." },
+      { title: "Logística", text: "Gestão multimodal e armazenamento." },
+      { title: "Entrega", text: "Desalfandegamento e entrega final." },
+    ],
+    methodology: ["Due diligence rigorosa", "Cobertura de risco", "Contratos a termo", "Inspeção independente"],
+    differentiators: ["Portfólio diversificado", "Expertise no mercado regional e global", "Capacidade financeira estruturada"],
+    faqs: [
+      { q: "Trabalham com commodities agrícolas e minerais?", a: "Sim, operamos com um mix completo incluindo energéticas." },
+      { q: "Oferecem suporte na logística de exportação?", a: "Sim, gerimos toda a cadeia logística end-to-end." },
     ],
   },
 ];

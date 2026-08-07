@@ -9,6 +9,7 @@ import {
   PackageSearch,
   Handshake,
   Ship,
+  Globe,
   type LucideIcon,
 } from "lucide-react";
 
@@ -22,6 +23,7 @@ import imgLogistica from "../assets/service_logistica.jpg";
 import imgProcurement from "../assets/service_procurement.jpg";
 import imgParcerias from "../assets/service_parcerias.jpg";
 import imgImportacao from "../assets/service_importacao.jpg";
+import imgCommodities from "../assets/service_commodities.png";
 
 export type Service = {
   slug: string;
@@ -511,6 +513,39 @@ export const services: Service[] = [
         q: "Do you assist in obtaining import/export licenses?",
         a: "Yes, we assist in registering your company as a legal importer/exporter in Mozambique."
       }
+    ]
+  },
+  {
+    slug: "commodities",
+    title: "Commodities Trading",
+    short: "Global and integrated trading of agricultural, mineral, and energy products.",
+    icon: Globe,
+    image: imgCommodities,
+    intro: "We connect global markets with a diversified commodities portfolio, ensuring quality, traceability, and logistics efficiency.",
+    description: "We operate across the entire commodities spectrum — agricultural, mineral, and energy — offering procurement, trading, and logistics solutions. We guarantee secure transactions and risk mitigation in a volatile international market.",
+    problems: [
+      "Price volatility",
+      "Logistics and customs risks",
+      "Difficulty accessing reliable suppliers",
+      "Lack of quality assurances",
+    ],
+    benefits: [
+      "Access to a global network of partners",
+      "Integrated supply chain management",
+      "Market risk mitigation",
+      "Strict quality control",
+    ],
+    how: [
+      { title: "Analysis", text: "Evaluation of market trends and sourcing needs." },
+      { title: "Sourcing", text: "Contracting of certified producers and suppliers." },
+      { title: "Logistics", text: "Multimodal management and warehousing." },
+      { title: "Delivery", text: "Customs clearance and final delivery." },
+    ],
+    methodology: ["Rigorous due diligence", "Risk hedging", "Forward contracts", "Independent inspection"],
+    differentiators: ["Diversified portfolio", "Regional and global market expertise", "Structured financial capacity"],
+    faqs: [
+      { q: "Do you trade agricultural and mineral commodities?", a: "Yes, we operate with a complete mix including energy." },
+      { q: "Do you offer support in export logistics?", a: "Yes, we manage the entire end-to-end logistics chain." },
     ]
   }
 ];
